@@ -35,4 +35,4 @@ while guess_count < 3
 end
 
 
-puts "Sorry, you're out of guesses.  You should have guessed #{answer}"
+puts "Sorry, you're out of guesses.  You should have guessed #{answer}."
