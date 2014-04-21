@@ -13,6 +13,7 @@ while guess_count < 3
 # Evaluate guess
   if user_guess == answer
     puts "Congratulations!  You're a lucky guesser!"
+    exit
 
   elsif user_guess < answer
     puts "You're a bit low, try again!"
