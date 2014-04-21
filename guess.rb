@@ -29,15 +29,18 @@ while guess_count < max_guess
   elsif user_guess < answer && user_guess >= 1
     puts "You're a bit low, try again!"
     guess_count = guess_count + 1
+    puts "Guesses remaining: #{max_guess - guess_count}"
     # Restart game if guesses < 3
 
   elsif user_guess > answer && user_guess <= upper_limit
     puts "You're a bit over, try again!"
     guess_count = guess_count + 1
+    puts "Guesses remaining: #{max_guess - guess_count}"
     # Restart game if guesses < 3
 
   else
     puts "Please resubmit a number between 1 and #{upper_limit}."
+    puts "Guesses remaining: #{max_guess - guess_count}"
   end
 
 end
