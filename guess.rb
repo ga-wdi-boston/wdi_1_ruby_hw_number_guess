@@ -1,6 +1,7 @@
 the_number = rand(10)+1
 guessed = false
 guesses_remaining = 3
+current_guess = 0
 
 puts the_number
 
@@ -11,6 +12,12 @@ puts "Good luck!"
 while !guessed && guesses_remaining > 0
   print "You have #{guesses_remaining} guesses remaining! Please enter your guess: "
   current_guess = gets.to_i
+  while current_guess > 11 || current_guess < 1
+    puts "You have entered an invalid number."
+    print "Please enter a number 1-10: "
+    current_guess = gets.to_i
+  end
+
   if current_guess == the_number
     guesses_remaining -= 1
     puts "CONGRATS! You have guesses the number!"
@@ -25,6 +32,7 @@ while !guessed && guesses_remaining > 0
     else
       puts "The number is higher than " + current_guess.to_s
     end
+    current_guess = 0
   end
 end
 
