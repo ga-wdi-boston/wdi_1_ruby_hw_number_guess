@@ -7,11 +7,12 @@ puts "Guess what it is:"
 
 # User provides a guess and the number is assigned the variable guess_number
 guess_number = gets.chomp
-puts guess_number
 
 # Response if user guesses correctly
 if guess_number == random_number
   puts "Perfect!" + guess_number.to_s + " is correct!"
-else
-  puts "Try again: "
+elsif guess_number.to_i > random_number
+  puts "Try again. Think smaller this time."
+else  guess_number.to_i < random_number
+  puts "Try again. Think larger this time."
 end
