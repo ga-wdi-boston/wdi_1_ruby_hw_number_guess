@@ -1,13 +1,20 @@
+puts ("----- Test your luck with a number guessing game! -----\n").center 80
+puts
+print "\t\tPlease specify a maximum number to choose from: "
+upper_limit = gets.chomp.to_i
+
+
 # Generate a number between 1 and 10
-answer = rand(1..10)
+answer = rand(1..upper_limit)
 guess_count = 0
+
 
 
 # User is allowed 3 guesses
 while guess_count < 3
 
   # Ask the user to provide a number between 1 and 10
-  print "Please guess a number between 1 and 10: "
+  print "Please guess a number between 1 and #{upper_limit}: "
   user_guess = gets.chomp.to_i
 
 
@@ -21,7 +28,7 @@ while guess_count < 3
     guess_count = guess_count + 1
     # Restart game if guesses < 3
 
-  elsif user_guess > answer && user_guess <= 10
+  elsif user_guess > answer && user_guess <= upper_limit
     puts "You're a bit over, try again!"
     guess_count = guess_count + 1
     # Restart game if guesses < 3
