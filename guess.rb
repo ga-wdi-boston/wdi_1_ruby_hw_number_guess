@@ -2,6 +2,14 @@ puts
 puts ("----- Test your luck with a number guessing game! -----\n").center 80
 print "\t\tPlease specify a maximum number to choose from: "
 upper_limit = gets.chomp.to_i
+
+puts
+
+while upper_limit != Integer && upper_limit <= 10
+  print "\t\t\t***Please enter an integer over 10: "
+  upper_limit = gets.chomp.to_i
+end
+
 puts
 
 max_guess = 3
