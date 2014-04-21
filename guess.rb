@@ -1,16 +1,17 @@
-puts
+puts # Line break
+
 puts ("----- Test your luck with a number guessing game! -----\n").center 80
 print "\t\tPlease specify a maximum number to choose from: "
 upper_limit = gets.chomp.to_i
 
-puts
+puts  # Line break
 
 while upper_limit != Integer && upper_limit <= 10
   print "\t\t\t***Please enter an integer over 10: "
   upper_limit = gets.chomp.to_i
 end
 
-puts
+puts  # Line break
 
 max_guess = 3
 max_guess = 5 if upper_limit.between?(11,50)
