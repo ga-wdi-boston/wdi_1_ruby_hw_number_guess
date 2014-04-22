@@ -3,7 +3,6 @@ randnum = 1 + rand(10) # generates a random number 1-10
 puts "Welcome to Guess the Number!"
 puts "To play the game, first guess a number between 1 & 10."
 puts "You will only have three guesses, but I'll give you two hints."
-puts
 print "Make your first guess: "
 guess1 = gets.chomp #records the first response
 #validation loop here
@@ -19,15 +18,33 @@ end
 # a conditional starting point that only has one chance
 # win or lose you exit after your first guess... ip
 if guess1.to_i == randnum
-  puts "Luck is on your side!"
-  exit
-elsif guess1.to_i > randnum
-  print "Guess lower:"
-  guess2 = gets.chomp
-else
-  print "Guess higher:"
-  guess2 = gets.chomp
+    puts "Luck is on your side!"
+    exit
+  elsif guess1.to_i > randnum
+    print "Guess lower:"
+    guess2 = gets.chomp
+  else
+    print "Guess higher:"
+    guess2 = gets.chomp
 end
-# check-in to see if we're computing
-puts guess2
-puts randnum
+# cumbersome but effective round 2 conditional
+if guess2.to_i == randnum
+    puts "Second time is a charm!"
+    exit
+  elsif guess2.to_i > randnum
+    print "Last guess.  Go lower:"
+    guess3 = gets.chomp
+  else
+    print "Last guess. Go higher:"
+    guess3 = gets.chomp
+end
+# cumbersome but effective round 3 conditional
+if guess3.to_i == randnum
+    puts "Took a while, but you did it!"
+  else
+    puts "You lose!  Don't go to the casino!"
+end
+
+puts "Sorry.  The correct answer was #{randnum}"
+exit
+
