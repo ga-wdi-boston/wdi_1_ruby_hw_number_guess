@@ -1,6 +1,6 @@
 
 #Program generates a random number and asks user to guess it
-number_1 = rand(1..10)
+number_rand = rand(1..10)
 puts "Hi There! Guess a number between 1 and 10"
 number_1 = gets.chomp
 
@@ -15,6 +15,7 @@ elsif number_1 != number_rand
 	puts "Guess again and enter a new number!"
 	number_2 = gets.chomp
 end
+
 
 
 
