@@ -14,5 +14,5 @@ while (guess1.to_i < 1 || guess1.to_i > 10)
 end
 
 puts guess1
-puts randnum1
+puts randnum
 
