@@ -15,12 +15,19 @@ end
 #temporary check-in to see if we're still running
 #puts guess1
 #puts randnum
+
 # a conditional starting point that only has one chance
 # win or lose you exit after your first guess... ip
-if guess1 == randnum
+if guess1.to_i == randnum
   puts "Luck is on your side!"
   exit
+elsif guess1.to_i > randnum
+  print "Guess lower:"
+  guess2 = gets.chomp
 else
-  puts "You lose!"
-  exit
+  print "Guess higher:"
+  guess2 = gets.chomp
 end
+# check-in to see if we're computing
+puts guess2
+puts randnum
