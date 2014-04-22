@@ -20,7 +20,7 @@ end
 def play_again
   puts "Play again? "
   print "> "
-  answer = gets.chomp
+  answer = gets.chomp.downcase
   if answer.include?('y')
     start
   else
