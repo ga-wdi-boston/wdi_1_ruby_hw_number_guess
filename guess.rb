@@ -1,8 +1,8 @@
 
 #Program generates a random number and asks user to guess it
-number_rand = rand(1..10)
+number_rand = rand(1..10).to_i
 puts "Hi There! Guess a number between 1 and 10"
-number_1 = gets.chomp
+number_1 = gets.chomp.to_i
 
 #If random number is guessed number, the program tells the user
 if number_1 == number_rand 
@@ -13,7 +13,7 @@ elsif number_1 != number_rand
 	puts "Sorry, that is not the number"
 # The program tells the user to guess again and to enter a new number
 	puts "Guess again and enter a new number!"
-	number_2 = gets.chomp
+	number_2 = gets.chomp.to_i
 end
 
 #if the 2nd guess is correct, the user is told
@@ -24,7 +24,7 @@ if  number_2 == number_rand
 elsif number_2 != number_rand
 	puts "You only have three chances, guess one more time!"
 
-	number_3 = gets.chomp
+	number_3 = gets.chomp.to_i
 end	
 
 
