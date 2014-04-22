@@ -14,8 +14,8 @@ end
 puts  # Line break
 
 max_guess = 3
-max_guess = 5 if upper_limit.between?(11,50)
-max_guess = 10 if upper_limit > 51
+max_guess = 5 if upper_limit.between?(20,50)
+max_guess = 8 if upper_limit > 51
 
 # Generate a number between 1 and 10
 answer = rand(1..upper_limit)
@@ -36,13 +36,13 @@ while guess_count < max_guess
     exit
 
   elsif user_guess < answer && user_guess >= 1
-    puts "You're a bit low, try again!"
+    puts "You're low, try again!"
     guess_count = guess_count + 1
     puts "Guesses remaining: #{max_guess - guess_count}"
     # Restart game if guesses < 3
 
   elsif user_guess > answer && user_guess <= upper_limit
-    puts "You're a bit over, try again!"
+    puts "You're over, try again!"
     guess_count = guess_count + 1
     puts "Guesses remaining: #{max_guess - guess_count}"
     # Restart game if guesses < 3
