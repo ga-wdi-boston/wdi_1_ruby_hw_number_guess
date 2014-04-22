@@ -1,4 +1,4 @@
-randnum = 1 + rand(10) # generates a random number 1-10
+randnum = 1 + rand(9) # fixed number generator BETWEEN 1-10
 # intro and rules
 puts "Welcome to Guess the Number!"
 puts "To play the game, first guess a number between 1 & 10."
@@ -11,9 +11,7 @@ while (guess1.to_i < 1 || guess1.to_i > 10)
   print "Please guess again: "
   guess1 = gets.chomp
 end
-#temporary check-in to see if we're still running
-#puts guess1
-#puts randnum
+
 
 # a conditional starting point that only has one chance
 # win or lose you exit after your first guess... ip
