@@ -10,11 +10,11 @@ max = gets.chomp.to_i
 
 random_number = rand(1..max)
 
+guesses = 3
+
+puts "You will have #{guesses} chances."
 
 
-puts "You will have 3 chances."
-
-guesses = 1
 
 print "> "
 
@@ -37,10 +37,10 @@ def hint(guess, random_number)
   end
 end
 
-while guess != random_number and guesses < 3
+while guess != random_number && guesses > 1
   valid = valid?(guess, max)
   if valid == true
-    guesses += 1
+    guesses -= 1
     hint(guess, random_number)
     puts "Guess again."
     print "> "
