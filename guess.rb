@@ -1,7 +1,4 @@
 
-
-
-
 random_number = rand(1..10)
 
 puts "Please guess a random number between 1 and 10."
@@ -14,7 +11,7 @@ print "> "
 
 guess = gets.chomp.to_i
 
-def higher_lower(guess, random_number)
+def hint(guess, random_number)
   if guess < random_number
     puts "Try going a bit higher"
   elsif guess > random_number
@@ -22,15 +19,14 @@ def higher_lower(guess, random_number)
   end
 end
 
-
-higher_lower(guess, random_number)
+hint(guess, random_number)
 
 while guess != random_number and guesses < 3
   guesses += 1
   puts "Guess again."
   print "> "
   guess = gets.chomp.to_i
-  higher_lower(guess, random_number)
+  hint(guess, random_number)
 end
 
 if guess == random_number
