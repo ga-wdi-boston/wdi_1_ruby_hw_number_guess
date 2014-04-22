@@ -16,6 +16,16 @@ elsif number_1 != number_rand
 	number_2 = gets.chomp
 end
 
+#if the 2nd guess is correct, the user is told
+
+if  number_2 == number_rand
+	puts "You got it!"
+#if the second guess is not correct, the user has one more try
+elsif number_2 != number_rand
+	puts "You only have three chances, guess one more time!"
+
+	number_3 = gets.chomp
+end	
 
 
 
