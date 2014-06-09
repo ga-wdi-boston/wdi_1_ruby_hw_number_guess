@@ -1,9 +1,3 @@
-# method that prompts the user to guess the number and returns it as a Fixnum
-def guess_prompt
-  puts "Guess a number between 1 and 10: "
-  guess = gets.chomp.to_i
-end
-
 # method that starts the guessing game
 def game
   correct = false
@@ -11,13 +5,13 @@ def game
 
   # create a random number between 1 and 10
   random = 1 + rand(10)
-  puts random
 
-  # program runs until user guesses the random number correctly
+  # program runs until user guesses the random number correctly or three incorrect guesses
   while !correct && guess_count < 3
 
-    # prompts the user to guess the number and returns it
-    guess = guess_prompt
+    # prompts the user to guess the number and assigns input as a Fixnum
+    puts "Guess a number between 1 and 10: "
+    guess = gets.chomp.to_i
 
     # if number is correct the program let's the user know and reassigns correct to true to end the while loop
     if guess == random
