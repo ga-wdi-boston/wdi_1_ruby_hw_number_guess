@@ -8,7 +8,7 @@ loop do
   puts "Take a guess! "
   guess = gets.chomp.to_i
   if guess > 10 or guess < 0
-    puts "Pick a number"
+    puts "Please pick a number between 1 and 10, inclusive"
   elsif num_guesses == 0 and guess != number
     puts "Nope, it was #{number}"
     break
