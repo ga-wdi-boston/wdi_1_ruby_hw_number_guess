@@ -1,26 +1,49 @@
 # establish the target number
 max_number = 10
-magic_number = rand(max_number)
 max_guesses = 3
 
-i = 0
+playagain = "Y"
 
 begin
-  puts "Guess a number, any number"
-  guess = gets.chomp.to_i
 
-  if guess == magic_number
-    puts "YOU'RE A WINNER! The number was #{magic_number} Congratulations!"
-    i = max_guesses
+  i = 0
+  winner = false
+  magic_number = rand(max_number)
 
-  elsif guess > magic_number
-    puts "That's a little too high"
-    i += 1
+  begin
+    # ask for a guess
+    puts "Guess a number, any number"
+    guess = gets.chomp.to_i
 
-  elsif guess < magic_number
-    puts "That's a little too low"
-    i += 1
+    if guess == magic_number
+      puts "YOU'RE A WINNER! The number was #{magic_number} Congratulations!"
+      i = max_guesses
+      winner = true
+
+    elsif guess > max_number
+      puts "That's WAY too high! Guess again."
+
+    elsif guess <= 0
+      puts "Don't be so negative! Pick a positive integer."
+
+    elsif guess > magic_number
+      puts "That's a little too high"
+      i += 1
+
+    elsif guess < magic_number
+      puts "That's a little too low"
+      i += 1
+    end
+
+  end until i >= max_guesses
+
+  if !winner
+    puts "Sorry! The number was #{magic_number}."
   end
 
-end until i >= max_guesses
+  puts "Do you want to play again? Type 'Y' for yes! Press any other key to exit."
+  playagain = gets.chomp.upcase
+
+end until playagain != "Y"
+
 
