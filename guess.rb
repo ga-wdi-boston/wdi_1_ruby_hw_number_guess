@@ -1,5 +1,10 @@
-# establish the target number
-max_number = 10
+# Game setup
+
+puts "I'm thinking of a number between one and..."
+puts "(Tell the genie how high to set the range)"
+max_number = gets.chomp.to_i
+
+
 max_guesses = 3
 
 playagain = "Y"
@@ -15,7 +20,17 @@ begin
   puts "Let's play!"
   begin
     # ask for a guess
-    puts "Guess a number, any number (between 0 and #{max_number}, that is)"
+    if (max_guesses - i) == 1
+      puts "You only have one guess left! Use it wisely!"
+    else
+      puts "You have #{max_guesses - i} guesses!"
+    end
+
+    if i == 0
+      puts "Guess a number, any number (between 0 and #{max_number}, that is)"
+    else
+      puts "Guess again!"
+    end
     guess = gets.chomp.to_i
 
     if guess == magic_number
