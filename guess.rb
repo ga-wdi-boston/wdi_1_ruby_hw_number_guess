@@ -24,6 +24,10 @@ def game
       puts "You're correct!"
       correct = true
 
+    # error message if guess is out of range
+    elsif guess < 1 || guess > 10
+      puts "You're guess is out of range. Guess again!"
+
     # increases the guess count and let's the user know if the answer is higher or lower
     else
       guess_count += 1
