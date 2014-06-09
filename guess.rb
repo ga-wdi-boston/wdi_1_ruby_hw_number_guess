@@ -36,6 +36,13 @@ def game
 
   # Shows the correct answer to the user if they did not guess it.
   puts "Sorry you are out of guesses. The random number is #{random}." if !correct
+
+  # prompt the user to ask if they want to play again
+  puts "Would you like to play again? (yes or no)"
+  play_again = gets.chomp.downcase
+
+  # starts a new game if yes; else ends program
+  game if play_again == "yes"
 end
 
 game
