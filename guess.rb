@@ -24,9 +24,15 @@ def game
       puts "You're correct!"
       correct = true
 
-    # allows the user to guess 3 times
+    # increases the guess count and let's the user know if the answer is higher or lower
     else
       guess_count += 1
+      if guess < random
+        puts "Higher!"
+      else
+        puts "Lower!"
+      end
+
     end
   end
 
