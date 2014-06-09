@@ -22,5 +22,5 @@ begin
     i += 1
   end
 
-end until i > max_guesses
+end until i >= max_guesses
 
