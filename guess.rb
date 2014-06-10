@@ -1,4 +1,4 @@
-num = rand(4)
+num = rand(11)
 num += 1 if num == 0
 guess_countr = 0
 
@@ -10,7 +10,12 @@ while guess_countr < 2
     print "You're right!\n\n"
     exit
   else
-    puts "Nope, you're incorrect! Try again."
+    puts "Nope, you're incorrect!"
+      if guess.to_i < num
+        puts "Try again. Higher, this time."
+      else
+        puts "Try again. Lower, this time."
+      end
     guess = gets.chomp
     guess_countr += 1
   end
