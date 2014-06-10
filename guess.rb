@@ -5,22 +5,19 @@ random_number = Random.rand(1..10)
 
 wrong_answers = 0
 
-until random_number == guess.to_i
-  puts "That wasn't it, but you'll get it next time. I believe in you."
-  puts "You guessed #{guess}, and the correct answer is #{random_number}."
-
-  puts "Guess again!"
-  guess = gets
-
-  puts "You guessed #{guess}, and the correct answer is #{random_number}."
-
-  puts "Guess again!"
-  guess = gets
+if guess.to_i == random_number
+  puts "You guessed correct! The number is indeed #{guess}."
+else
+  until wrong_answers == 3
+    wrong_answers += 1
+    case wrong_answers
+    when 1
+      puts "Incorrect. You have two guesses left."
+    when 2
+      puts
+        "Incorrect. You have one guess left."
+    else
+      "You are out of guesses."
+    end
+  end
 end
-
-puts "You guessed correct! The number is indeed #{guess}."
-
-
-
-
-
