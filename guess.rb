@@ -1,5 +1,5 @@
 number = rand(10) + 1
-puts number
+# puts number uncomment this line to troubleshoot
 
 i = 0
 while i < 3
