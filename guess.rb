@@ -1,7 +1,13 @@
 ## This Program will generate a random number and prompt the user to guess the number.
 
+puts "Welcome to Guess the Number Game!"
+
+# Prompts for random number's maximum.
+print "Enter a maximum number you want to guess: "
+max_number = gets.chomp.to_i
 # Generates random number
-random_num = Random.rand(1...10)
+random_num = Random.rand(1...max_number)
+puts random_num
 
 # This method prompts user to enter a number.
 def input_number
@@ -26,7 +32,7 @@ while i < 3
     exit
   end
   if random_num < @guess_num
-    puts "The numer is lower than your guess"
+    puts "The number is lower than your guess"
   elsif random_num > @guess_num
     puts "The number is higher than your guess"
   end
