@@ -11,8 +11,8 @@ random_num = Random.rand(1...max_number)
 max_guess = (max_number*0.3).ceil
 
 # This method prompts user to enter a number.
-def input_number
-  print "Guess a number between 1-10: "
+def input_number(max_number)
+  print "Guess a number between 1-#{max_number}: "
   @guess_num = gets.chomp.to_i
 end
 
@@ -25,9 +25,10 @@ end
 
 # Evaluate the guess and prompt the user if their guess is higher or lower than the actual number.
 i = 0
+g = max_guess
 while i < max_guess
-  puts "You have #{max_guess} guess(es)."
-  input_number
+  puts "You have #{g} guess(es)."
+  input_number(max_number)
   check_number(max_number)
   if random_num == @guess_num
     puts "Congratulation! You guessed the right number!"
@@ -40,7 +41,7 @@ while i < max_guess
     puts
   end
   i += 1
-  max_guess -= 1
+  g -= 1
 end
 
 puts "The number was #{random_num}"
