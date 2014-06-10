@@ -32,7 +32,7 @@ while user_guess != answer && count < guesses
     end
 
   else
-    puts "Error - please select a number between 1 and 10"
+    puts "Error - please select a number between 1 and #{number}"
   end
 
 end
