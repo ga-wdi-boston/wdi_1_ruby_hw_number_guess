@@ -1,4 +1,4 @@
-# method that starts the guessing game
+# method to play a guessing game
 def game
   correct = false
   guess_count = 0
@@ -31,7 +31,6 @@ def game
       puts "You're guess is out of range. Guess again!"
 
     # increases the guess count and let's the user know if the answer is higher or lower
-    # and how many guesses they have remaining
     # if they are out of guesses it returns the correct answer
     else
       guess_count += 1
