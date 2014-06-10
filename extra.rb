@@ -31,14 +31,16 @@ loop do           # using loop method so program will run over again with each i
   end
 end
 
-"Would you like to play again? (yes/no)"
+puts "Would you like to play again? (yes/no)"
 answer = gets.chomp
 
 if answer == "no"
   play = false
   break
 end
+
  if answer == "yes"
   play = true
   break
+end
 end
