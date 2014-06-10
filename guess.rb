@@ -6,18 +6,21 @@ loop do
   num_of_guesses -= 1
 
   puts "What is the number you'd like to guess?"
-  user_guess = gets.chomp
+  user_guess = gets.chomp.to_i
 
   if user_guess == num_to_guess
     puts "Great that is right!"
     break
   else
-    puts "Sorry guess again."
 
     if num_of_guesses == 0
       puts "The number was #{num_to_guess}"
       break
     end
+
+    hi_or_lo = (user_guess > num_to_guess) ? "lower" : "higher"
+    puts "Sorry guess " + hi_or_lo + "."
+
   end
 end
 
