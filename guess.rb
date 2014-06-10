@@ -1,5 +1,4 @@
 ## This Program will generate a random number and prompt the user to guess the number.
-
 puts "Welcome to Guess the Number Game!"
 
 # Prompts for random number's maximum.
