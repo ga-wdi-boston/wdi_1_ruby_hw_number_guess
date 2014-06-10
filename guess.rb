@@ -7,5 +7,7 @@ if guess1 == my_number
   puts "You got it!"
 elsif guess1 > my_number
   puts "Try again. That guess was too high."
+else guess1 < my_number
+  puts "Try again. That guess was too low."
 end
 
