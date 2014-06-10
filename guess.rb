@@ -23,6 +23,11 @@ while(num_chances > 0)
     user_guess = gets.chomp.to_i
     num_chances -= 1
   end
+  if !(1..max_num).include?(user_guess)
+    puts "Remember - 1 to #{max_num.to_s}, Try again:"
+    user_guess = gets.chomp.to_i
+    num_chances += 1
+  end
 end
 puts "The number was #{correct_guess.to_s}, better luck next time!"
 
