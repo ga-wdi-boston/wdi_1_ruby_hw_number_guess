@@ -6,7 +6,10 @@ puts "What number is Ruby thinking of, from 1 to 10?"
 guess = gets.chomp
 
 while guess_countr < 2
-  if guess.to_i == num
+  if ((guess.to_i < 1) || (guess.to_i >10))
+    puts "Please enter a number between 1 and 10."
+    guess = gets.chomp
+  elsif guess.to_i == num
     print "You're right!\n\n"
     exit
   else
@@ -21,8 +24,12 @@ while guess_countr < 2
   end
 end
 
+if ((guess.to_i < 1) || (guess.to_i >10))
+    puts "Please enter a number between 1 and 10."
+    guess = gets.chomp
+end
 if guess.to_i == num
-   print "You're right!\n\n"
+    print "You're right!\n\n"
 else
    puts "Sorry, dude. The number was #{num}"
 end
