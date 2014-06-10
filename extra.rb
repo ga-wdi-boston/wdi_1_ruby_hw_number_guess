@@ -1,3 +1,5 @@
+play = true
+while play = true
 
 puts "Pick a maximum number"          # Asks user to pick the maximum number for the game
 limit = gets.chomp.to_i               # maximum number
@@ -27,4 +29,16 @@ loop do           # using loop method so program will run over again with each i
       num_guesses -= 1
       puts "you have #{num_guesses} guesses left"        # returns number of guesses left after incorrect guess
   end
+end
+
+"Would you like to play again? (yes/no)"
+answer = gets.chomp
+
+if answer == "no"
+  play = false
+  break
+end
+ if answer == "yes"
+  play = true
+  break
 end
