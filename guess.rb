@@ -1,12 +1,14 @@
 # Game setup
 
 puts "I'm thinking of a number between one and..."
-puts "(Tell the genie how high to set the range)"
+puts "(Tell the robot how high to set the range)"
 max_number = gets.chomp.to_i
 
+# Set the number of guesses to the log(base 2) of the maximum
+# This means that if you always guess in the middle of the possible numbers, you're very likely to end up getting it right
+# I'm making a pretty easy game okay??
 
-max_guesses = 3
-
+max_guesses = Math.log2(max_number).floor
 playagain = "Y"
 
 begin
@@ -23,7 +25,7 @@ begin
     if (max_guesses - i) == 1
       puts "You only have one guess left! Use it wisely!"
     else
-      puts "You have #{max_guesses - i} guesses!"
+      puts "You have #{max_guesses - i} guesses."
     end
 
     if i == 0
@@ -39,12 +41,14 @@ begin
       i = max_guesses
       winner = true
 
+
     # -- out of range options --
     elsif guess > max_number
       puts "That's WAY too high! Guess again."
 
     elsif guess <= 0
       puts "Don't be so negative! Pick a positive integer."
+
 
     # -- within range, just a little off! --
     elsif guess > magic_number
@@ -55,6 +59,8 @@ begin
       puts "That's a little too low"
       i += 1
     end
+
+
   # stop when the player is out of guesses
   end until i >= max_guesses
 
