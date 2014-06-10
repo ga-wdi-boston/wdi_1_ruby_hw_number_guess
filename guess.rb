@@ -31,8 +31,10 @@ while i < 3
     exit
   elsif random_num < @guess_num
     puts "The number is lower than your guess"
+    puts
   elsif random_num > @guess_num
     puts "The number is higher than your guess"
+    puts
   end
   i += 1
 end
