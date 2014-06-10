@@ -12,12 +12,12 @@ user_guess = gets.chomp.to_i
 #while(correct_guess != user_guess)
 while(num_chances > 0)
   if user_guess == correct_guess
-    puts "You did it!!"
-    num_chances = -1
+    abort("You did it!!!")
   else
     puts "Wrong, too bad! Try another guess -- #{num_chances.to_s} tries left: "
     user_guess = gets.chomp.to_i
     num_chances -= 1
   end
 end
+puts "The number was #{correct_guess.to_s}, better luck next time!"
 
