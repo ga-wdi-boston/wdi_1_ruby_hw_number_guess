@@ -11,4 +11,11 @@ until ((wrong_answers == 2) || (guess.to_i == random_number))
   guess = gets
 end
 
+if guess.to_i != random_number
+  puts "You are out of guesses! The correct answer is #{random_number}"
+else
+  puts "You've guessed correctly!"
+end
+
+
 
