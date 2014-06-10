@@ -1,9 +1,15 @@
-number = ((rand() * 10) + 1).to_i # generate random number
-guesses = 1
-while guesses <= 3 # have user make 3 guesses
-  print("Guess a random number between 1 and 10: ")
+num_max = 0
+while num_max < 5 || num_max > 1000 # have user select maximum number
+  print("Please choose a maximum number between 5 and 1,000: ")
+  num_max = gets.chomp.to_i
+end
+
+number = ((rand() * num_max) + 1).to_i # generate random number
+guesses = (num_max / Math.sqrt(num_max)).to_i # scale guesses according to num_max
+while guesses > 0
+  print("Guess a random number between 1 and #{num_max}: ")
   guess = gets.chomp.to_i
-  if guess > 10 || guess < 1 # ensure proper guess
+  if guess > num_max || guess < 1 # ensure proper guess
     puts("Please guess a number within range.")
     next
   elsif guess > number
@@ -14,6 +20,7 @@ while guesses <= 3 # have user make 3 guesses
     puts("You got it!")
     exit # end program if user guesses correctly
   end
-  guesses += 1
+  guesses -= 1
+  puts("You have #{guesses} guesses remaining")
 end
 puts("Sorry, you're out of guesses.  The answer was #{number}.")
