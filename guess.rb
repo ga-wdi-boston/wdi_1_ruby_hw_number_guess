@@ -8,3 +8,5 @@ if user_number != rand(11)
     puts "I'm sorry, that is incorrect. Please guess again:"
     user_number = gets.chomp
 end
+
+puts "You are CORRECT! Thank you for playing!"
