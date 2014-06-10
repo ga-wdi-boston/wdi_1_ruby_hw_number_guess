@@ -14,7 +14,12 @@ while(num_chances > 0)
   if user_guess == correct_guess
     abort("You did it!!!")
   else
-    puts "Wrong, too bad! Try another guess -- #{num_chances.to_s} tries left: "
+    if user_guess < correct_guess
+      hint = "higher..."
+    else
+      hint = "lower..."
+    end
+    puts "Wrong, too bad! Try again (hint: #{hint}) -- #{num_chances.to_s} tries left: "
     user_guess = gets.chomp.to_i
     num_chances -= 1
   end
