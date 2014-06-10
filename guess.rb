@@ -26,7 +26,16 @@ while count <= max_num_guesses
   #checks for a correct guess
   if is_right?(guess,num_to_guess)
     puts "Good guess! the number was: #{guess}"
-    break
+    print "Would you like to play again? y/n "
+    #checks for a yes and resets (Doesn't work right. Fell asleep before fixing)
+    if gets.chomp.downcase == 'y'
+      puts "generating a new number with same max"
+      count = 0
+      num_to_guess = Random.new.rand(0..max_guess).to_i
+      wrong_guesses = 0
+    else
+      break
+    end
   # checks to see if number is in range
   elsif guess > max_guess || guess < 0
     print "Number out of range try again..."
@@ -36,7 +45,7 @@ while count <= max_num_guesses
     count += 1
 
     #gives them a hint to guess higher or lower
-    if guess > num_to_guess
+    if guess > num_to_guess && wrong_guesses != max_num_guesses
       puts "try lower"
     else
       puts "try higher"
