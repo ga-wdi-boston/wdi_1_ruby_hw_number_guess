@@ -5,15 +5,14 @@ i = 0
 while i < 3
   puts "I'm thinking of a number between 1 and 10, can you guess it?"
   guess = gets.chomp.to_i
-  # this works but feels like cheating
   if guess == number
-    puts "Yay!"
-    i = 3
+    puts "Yay! You got it!"
+    i = 3 # this works but feels like cheating
   elsif guess > number
-    puts "Lower"
+    puts "Your guess was too high!"
     i = i+1
   else
-    puts "Higher"
+    puts "Your guess was too low!"
     i = i+1
   end
 end
