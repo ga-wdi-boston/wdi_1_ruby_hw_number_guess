@@ -18,7 +18,7 @@ def game
   while !correct && guess_count < num_guesses
 
     # prompts the user to guess the number and assigns input as a Fixnum
-    puts "Guess a number between 1 and #{max_num}. You have #{num_guesses} guesses."
+    puts "Guess a number between 1 and #{max_num}. You have #{num_guesses - guess_count} guesses remaining."
     guess = gets.chomp.to_i
 
     # if number is correct the program let's the user know and reassigns correct to true to end the while loop
@@ -37,9 +37,9 @@ def game
       guess_count += 1
       if guess_count != num_guesses
         if guess < random
-          puts "Higher! You have #{num_guesses - guess_count} guesses remaining."
+          puts "That is incorrect. The number is higher."
         else
-          puts "Lower! You have #{num_guesses - guess_count} guesses remaining."
+          puts "That is incorrect. The number is lower."
         end
       else
         puts "Sorry you are out of guesses. The random number is #{random}."
