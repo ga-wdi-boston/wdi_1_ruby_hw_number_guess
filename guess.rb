@@ -16,7 +16,7 @@ end
 
 # This method prompts user to enter a number between 1-10 until they have a right number.
 def check_number
-  while @guess_num > 10
+  while @guess_num > 10 || @guess_num == 0
     input_number
   end
 end
@@ -29,8 +29,7 @@ while i < 3
   if random_num == @guess_num
     puts "Congratulation! You guessed the right number!"
     exit
-  end
-  if random_num < @guess_num
+  elsif random_num < @guess_num
     puts "The number is lower than your guess"
   elsif random_num > @guess_num
     puts "The number is higher than your guess"
