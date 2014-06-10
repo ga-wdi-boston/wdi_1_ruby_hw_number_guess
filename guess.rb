@@ -12,10 +12,9 @@ user_number = gets.chomp.to_i
 
 # creates condition for proper number range
 # if input is out of range, error message puts and no guesses are lost
-for user_number in 1..10
-  if (user_number > 10 || user_number < 0) then
-    puts "Error: Please try again.. Between 1 and 10, silly! You still have #{guesses}!"
-    break
-  end
+if (user_number > 10 || user_number < 0)
+  puts "Error: Please try again.. Between 1 and 10, silly! You still have #{guesses}!"
+else
   guesses -= 1
 end
+
