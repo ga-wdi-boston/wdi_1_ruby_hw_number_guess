@@ -11,12 +11,18 @@ guess = gets.chomp.to_i
 guess_count = 0
 
 
-
+while guess != num_rand && guess_count < 3
+  if guess < 1 || guess > 10
+    puts "Your number is out of range. Guess again."
+    guess = gets.chomp.to_i
+  else
+    guess_count =+ 1
+    puts "You're wrong! Guess again!"
+    guess = gets.chomp.to_i
+  end
+end
 if guess == num_rand
-  puts "WOW! You got it!"
-else
-  puts "You're wrong! Guess again!"
-  guess = gets.chomp.to_i
+  puts "WOW! You guess correct!"
 end
 # allow the user to guess again if they guess incorrect
 =begin else
