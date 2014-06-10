@@ -34,13 +34,14 @@ end
 puts "Would you like to play again? (yes/no)"
 answer = gets.chomp
 
-if answer == "no"
-  play = false
-  break
+  if answer == "no"
+    play = false
+    break
+  end
+
+  if answer == "yes"
+    play = true
+  end
 end
 
- if answer == "yes"
-  play = true
-  break
-end
-end
+puts "Goobye"
