@@ -7,9 +7,8 @@ correct_guess = rand(1..10)
 puts "Can you guess the number? : "
 user_guess = gets.chomp.to_i
 
-if correct_guess == user_guess
-  puts "You did it!!"
-else
-  puts "Wrong, too bad!"
+while(correct_guess != user_guess)
+  puts "Wrong, too bad! Try another guess:"
+  user_guess = gets.chomp.to_i
 end
-
+puts "You did it!!"
