@@ -1,14 +1,26 @@
 # For homework 1
 
-guess_num = Random.new.rand(0..10).to_i
+num_to_guess = Random.new.rand(0..10).to_i
 
 print "Dear User: Please guess our random integer! ... "
 guess = gets.chomp
 
-if guess_num == guess.to_i
-  puts "Good guess!"
-else
-  puts "Guess again maybe"
+def is_right? (gus, random_num)
+  if gus.to_i == random_num
+    true
+  else
+    false
+  end
 end
 
-puts guess_num
+2.times do
+  if is_right?(guess,num_to_guess)
+    puts "Good guess!"
+    break
+  else
+    print "Guess again maybe: "
+    guess = gets.chomp
+  end
+end
+
+puts num_to_guess
