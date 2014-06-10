@@ -5,5 +5,6 @@ next number. Please enter a number:"
 user_number = gets.chomp
 
 if user_number != rand(11)
-    puts "I'm sorry, that is incorrect."
+    puts "I'm sorry, that is incorrect. Please guess again:"
+    user_number = gets.chomp
 end
