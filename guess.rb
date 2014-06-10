@@ -20,7 +20,7 @@ puts "Please select a number between 1 and #{number}"
 #While loop to run depending on critera of counter and as long as the user doesnt guess correctly
 while user_guess != answer && count < guesses
   user_guess = gets.chomp.to_i
-  if user_guess >= 1 && user_guess <= 10
+  if user_guess >= 1 && user_guess <= number
     if user_guess == answer
       puts "Congrats you got it!"
     elsif user_guess < answer
