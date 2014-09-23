@@ -2,7 +2,7 @@ require 'pry'
 
 magic_number = rand (1..10)
 
-puts "magic number: #{magic_number}"
+# puts "magic number: #{magic_number}"
 
 puts "I'm thinking of a number between 1 and 10 (inclusive). You have three tries to guess my number."
 puts "What's your first guess?"
