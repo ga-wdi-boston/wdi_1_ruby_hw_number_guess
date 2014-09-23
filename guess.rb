@@ -45,5 +45,39 @@ Repository has several logical commits with descriptive messages
 Code uses correct indentation/style and descriptive variable names
 
 don't spend more than 2 hours doing this activity
-
 =end
+
+
+class RandomGuess
+  @@count = 1
+  @@random_num = Random.new.rand(1..10)
+  # puts @@random_num
+
+  def initialize(integer)
+    checkguess(integer.to_i)
+  end
+
+  def checkguess(integer)
+    if @@count >= 3 && integer != @@random_num && integer.between?(1,10)
+      puts "You exceeded your attempts. The correct answer was #{@@random_num}\n"
+      return
+    elsif !integer.between?(1,10)
+      puts "That number is out of range. Try again: \n"
+      guess = initialize(gets.chomp)
+    elsif integer < @@random_num && @@count <= 3
+      @@count += 1
+      puts "Your guess was too low, try a higher number. Try again:\n"
+      guess = initialize(gets.chomp)
+    elsif integer > @@random_num && @@count <= 3
+      @@count += 1
+      puts "Your guess was too high, try a lower number. Try again:\n"
+      guess = initialize(gets.chomp)
+    elsif integer == @@random_num && @@count <= 3
+      print "Wicked pissah, you guessed right you SOB!!\n"
+    end
+  end
+end
+
+print "Guess the number between 1 and 10\n"
+guess = RandomGuess.new(gets.chomp)
+
