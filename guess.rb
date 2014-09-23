@@ -35,7 +35,7 @@ while current_attempt <= max_attempts do
     current_attempt += 1
   end
 
-  puts "Sorry... you lost. Better luck next time." if current_attempt > max_attempts
+  puts "Sorry... you lost.\nThe number you were looking for was #{computer_choice}.\nBetter luck next time." if current_attempt > max_attempts # Updates on this line inspired by @laurenfazah
 
 end
 
